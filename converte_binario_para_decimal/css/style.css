@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  gap: 20px;
+  background-color: white;
+  padding: 0px;
+  border-radius: 20px;
+}
+
+#inserirValorBinario {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+button {
+  width: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
