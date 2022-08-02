@@ -15,3 +15,8 @@ function modifyBorderRadius() {
     console.log(bottomLeft)
     console.log(bottomRigth)
 }
+
+function copyText() {
+    let copytext = document.getElementById("modifiableBox").style.select()
+    console.log(copytext)
+}
