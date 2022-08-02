@@ -20,6 +20,7 @@ body {
   width: 580px;
   height: 120px;
   border: solid black 1px;
+  padding: 10px 0;
   gap: 5px;
 }
 
@@ -30,10 +31,11 @@ body {
   width: 60%;
 }
 
-.modifiableBox {
+#modifiableBox {
   width: 250px;
   height: 250px;
-  border: solid black 2px;
+  border: solid green 2px;
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
