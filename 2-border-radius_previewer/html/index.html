@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/aplicacao.js"></script>
     <script src="../js/index.js"></script>
     <title>Border-radius Preciewer</title>
 </head>
@@ -28,7 +29,7 @@
         </div>
 
         <div class="modifyButton">
-            <button onclick="modifyBorderRadius()">Modificar caixa</button>
+            <button onclick="application.getInformations() ">Modificar caixa</button>
         </div>
     </div>
         
@@ -37,7 +38,7 @@
     </div>
 
     <div id="copytext">
-        <button onclick="copyText()">Copiar CSS</button>
+        <button onclick="application.copyText(this)">Copiar CSS</button>
     </div>
 </body>
 </html>
