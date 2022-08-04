@@ -1,4 +1,4 @@
-class App {
+class BorderRadius {
     constructor(topLeft, topRigth, bottomLeft, bottomRigth) {
         this.topLeft = topLeft;
         this.topRigth = topRigth;
@@ -11,8 +11,11 @@ class App {
         let topRigth = document.getElementById("top-rigth").value;
         let bottomLeft = document.getElementById("bottom-left").value;
         let bottomRigth = document.getElementById("bottom-rigth").value;
-        let application = new App(topLeft, topRigth, bottomLeft, bottomRigth);
-        this.modifyBorderRadius(application);
+        let application = new BorderRadius(topLeft, topRigth, bottomLeft, bottomRigth);
+        this.modifyBorderRadius(application)
+        console.log(application)
+        return application
+        
     }
 
     modifyBorderRadius(application) {
@@ -33,11 +36,20 @@ class App {
         console.log(application.bottomRigth);
     }
 
-    copyText(application) {
+    addPropertiesBorderRadiusHTML(application) {
         let text = `border-top-left-radius:${application.topLeft};
                 border-top-right-radius:${application.topRigth};
                 border-bottom-left-radius:${application.bottomLeft};
                 border-bottom-right-radius:${application.bottomRigth};`;
         console.log(text);
+
+        // let element = document.getElementById("styleBorderRadius")
+        // element.innerText(text)
     }
-}
+
+    copyText() {
+        
+    }
+}    
+
+    let application = new BorderRadius()

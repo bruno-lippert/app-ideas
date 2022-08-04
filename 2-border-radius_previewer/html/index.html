@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/aplicacao.js"></script>
-    <script src="../js/index.js"></script>
+    <!-- <script src="../js/index.js"></script> -->
     <title>Border-radius Preciewer</title>
 </head>
 <body>
@@ -29,16 +29,18 @@
         </div>
 
         <div class="modifyButton">
-            <button onclick="application.getInformations() ">Modificar caixa</button>
+            <button onclick="application.getInformations()">Modificar caixa</button>
         </div>
     </div>
         
     <div class="container-modifiableBox">
         <div id="modifiableBox"></div>
     </div>
-
+    <div>
+        <p id="styleBorderRadius"></p>
+    </div>
     <div id="copytext">
-        <button onclick="application.copyText(this)">Copiar CSS</button>
+        <button onclick="application.addPropertiesBorderRadiusHTML()">Copiar CSS</button>
     </div>
 </body>
 </html>

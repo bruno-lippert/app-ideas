@@ -1,1 +1,1 @@
-let application = new App()
+
