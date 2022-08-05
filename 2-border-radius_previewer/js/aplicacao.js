@@ -12,36 +12,41 @@ class BorderRadius {
         let bottomLeft = document.getElementById("bottom-left").value;
         let bottomRigth = document.getElementById("bottom-rigth").value;
         let application = new BorderRadius(topLeft, topRigth, bottomLeft, bottomRigth);
-        this.modifyBorderRadius(application)
+        // this.modifyBorderRadius(application)
         console.log(application)
         return application
         
     }
 
-    modifyBorderRadius(application) {
+    modifyBorderRadius() {
         if (
-            application.topLeft == "" ||
-            application.topRigth == "" ||
-            application.bottomLeft == "" ||
-            application.bottomRigth == ""
+            this.topLeft == "" ||
+            this.topRigth == "" ||
+            this.bottomLeft == "" ||
+            this.bottomRigth == ""
         ) {
             alert("Preencha todos os campos!");
         }
 
-        document.getElementById("modifiableBox").style.borderRadius = `${application.topLeft}% ${application.topRigth}% ${application.bottomLeft}% ${application.bottomRigth}%`;
+        document.getElementById("modifiableBox").style.borderRadius = `${this.topLeft}% ${this.topRigth}% ${this.bottomLeft}% ${this.bottomRigth}%`;
 
-        console.log(application.topLeft);
-        console.log(application.topRigth);
-        console.log(application.bottomLeft);
-        console.log(application.bottomRigth);
+        console.log(this.topLeft);
+        console.log(this.topRigth);
+        console.log(this.bottomLeft);
+        console.log(this.bottomRigth);
     }
 
-    addPropertiesBorderRadiusHTML(application) {
-        let text = `border-top-left-radius:${application.topLeft};
-                border-top-right-radius:${application.topRigth};
-                border-bottom-left-radius:${application.bottomLeft};
-                border-bottom-right-radius:${application.bottomRigth};`;
+    // copyCSS(){
+    //     this.addPropertiesBorderRadiusHTML(application)
+    // }
+
+    copyCSS() {
+        let text = `border-top-left-radius:${this.topLeft};
+                border-top-right-radius:${this.topRigth};
+                border-bottom-left-radius:${this.bottomLeft};
+                border-bottom-right-radius:${this.bottomRigth};`;
         console.log(text);
+        return text
 
         // let element = document.getElementById("styleBorderRadius")
         // element.innerText(text)
@@ -50,6 +55,12 @@ class BorderRadius {
     copyText() {
         
     }
+
 }    
 
-    let application = new BorderRadius()
+let application = new BorderRadius()
+
+function x() {
+    application.getInformations()
+    application.modifyBorderRadius()
+}
