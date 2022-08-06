@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.main-content {
+    width: 100%;
+    flex: 1 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "calculation calculation calculation calculation"
+    "clearAll clear division multiplication"
+    "num7 num8 num9 subtraction"
+    "num4 num5 num6 addition"
+    "num1 num2 num3 result";
+    gap: 15px;
+    padding: 50px 5px;
+    background-color: gray;
+}
+.calculation{grid-area: calculation;}
+#num1{
+    grid-area: num1;
+}
+#num2{
+    grid-area: num2;
+}
+#num3{
+    grid-area: num3;
+}
+#num4{
+    grid-area: num4;
+}
+#num5{
+    grid-area: num5;
+}
+#num6{
+    grid-area: num6;
+}
+#num7{
+    grid-area: num7;
+}
+#num8{
+    grid-area: num8;
+}
+#num9{
+    grid-area: num9;
+}
+#addition{
+    grid-area: addition;
+}
+#subtraction{
+    grid-area: subtraction;
+}
+#multiplication{
+    grid-area: multiplication;
+}
+#division{
+    grid-area: division;
+}
+#result{
+    grid-area: result;
+}
+#clearLast{
+    grid-area: clear;
+}
+#clearAll{
+    grid-area: clearAll;
+}
+
+.calculation {
+    height: 100px;
+    border: solid black 1px;
+}
+
+.buttons {
+    width: 100px;
+    height: 100px;
+}
