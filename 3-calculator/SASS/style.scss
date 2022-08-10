@@ -33,7 +33,16 @@ main {
     padding: 50px 5px;
     background-color: gray;
 }
-.calculation{grid-area: calculation;}
+.calculation{
+    grid-area: calculation;
+    height: 100px;
+    border: solid black 1px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: lightgray;
+}
 #num1{
     grid-area: num1;
 }
@@ -83,12 +92,14 @@ main {
     grid-area: clearAll;
 }
 
-.calculation {
-    height: 100px;
-    border: solid black 1px;
+#calculation {
+    padding: 0 35px 5px 0;
+    font-size: 1.5em;
 }
 
 .buttons {
     width: 100px;
     height: 100px;
+    border-radius: 50px;
+    font-size: 1.5em;
 }
