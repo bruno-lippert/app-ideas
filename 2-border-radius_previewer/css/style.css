@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: gray;
 }
 
 .main-content {
@@ -30,6 +31,7 @@ body {
   border: solid black 1px;
   padding: 10px 0;
   gap: 5px;
+  background-color: white;
 }
 
 .inputs {
@@ -42,7 +44,7 @@ body {
 #modifiableBox {
   width: 250px;
   height: 250px;
-  border: solid green 2px;
+  border: solid black 2px;
   background-color: green;
 }
 

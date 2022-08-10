@@ -1,42 +1,41 @@
 function getInformations() {
     topLeft = document.getElementById("top-left").value;
-    topRigth = document.getElementById("top-rigth").value;
+    topRight = document.getElementById("top-right").value;
     bottomLeft = document.getElementById("bottom-left").value;
-    bottomRigth = document.getElementById("bottom-rigth").value;
-    console.log(topLeft, topRigth, bottomLeft, bottomRigth);
+    bottomRight = document.getElementById("bottom-right").value;
 }
 
-function modifyBorderRadius(topLeft, topRigth, bottomLeft, bottomRigth) {
-    if (topLeft == "" || topRigth == "" || bottomLeft == "" || bottomRigth =="") {
+function modifyBorderRadius(topLeft, topRight, bottomLeft, bottomRight) {
+    if (topLeft == "" || topRight == "" || bottomLeft == "" || bottomRight =="") {
         alert("Preencha todos os campos!");
     } else {
         //neste trecho é feito a modificação da do modifiable box
-        document.getElementById("modifiableBox").style.borderRadius = `${topLeft}% ${topRigth}% ${bottomLeft}% ${bottomRigth}%`;
+        document.getElementById("modifiableBox").style.borderRadius = `${topLeft}% ${topRight}% ${bottomLeft}% ${bottomRight}%`;
 
         //este trecho cria os textos que vão ser inseridos no HTML
-        let topLeftText =  document.createTextNode(`border-top-left-radius: ${topLeft};`);
-        let topRigthText =  document.createTextNode(`border-top-rigth-radius: ${topRigth};`);
-        let bottomLeftText =  document.createTextNode(`border-bottom-left-radius: ${bottomLeft};`);
-        let bottomRigthText =  document.createTextNode(`border-bottom-rigth-radius: ${bottomRigth};`);
+        let topLeftText =  document.createTextNode(`border-top-left-radius: ${topLeft}px;`);
+        let topRightText =  document.createTextNode(`border-top-right-radius: ${topRight}px;`);
+        let bottomLeftText =  document.createTextNode(`border-bottom-left-radius: ${bottomLeft}px;`);
+        let bottomRightText =  document.createTextNode(`border-bottom-right-radius: ${bottomRight}px;`);
         
         //neste trecho os textos estão sendo inseridos no HTML
         let innerTopLeft = document.getElementById("topLeft")
         innerTopLeft.appendChild(topLeftText)
-        let innerTopRigth = document.getElementById("topRigth")
-        innerTopRigth.appendChild(topRigthText)
+        let innerTopRight = document.getElementById("topRight")
+        innerTopRight.appendChild(topRightText)
         let innerBottomLeft = document.getElementById("bottomLeft")
         innerBottomLeft.appendChild(bottomLeftText)
-        let innerBottomRigth = document.getElementById("bottomRigth")
-        innerBottomRigth.appendChild(bottomRigthText)
+        let innerBottomRigth = document.getElementById("bottomRight")
+        innerBottomRigth.appendChild(bottomRightText)
     }
 }
 
 function copyCSS() {
     let topLeft = document.getElementById("topLeft").innerHTML
-    let topRigth = document.getElementById("topRigth").innerHTML
+    let topRight = document.getElementById("topRigth").innerHTML
     let bottomLeft = document.getElementById("bottomLeft").innerHTML
-    let bottomRigth = document.getElementById("bottomRigth").innerHTML
-    let text = topLeft +"\n"+ topRigth +"\n"+ bottomLeft +"\n"+ bottomRigth
+    let bottomRight = document.getElementById("bottomRigth").innerHTML
+    let text = topLeft +"\n"+ topRight +"\n"+ bottomLeft +"\n"+ bottomRight
     
     navigator.clipboard.writeText(text)
     .then(() => {
@@ -45,16 +44,15 @@ function copyCSS() {
     .catch(err => {
     console.log('Something went wrong', err);
 })
-    console.log(topLeft)
 }
 
 function modifyBox() {
     getInformations();
-    modifyBorderRadius(topLeft, topRigth, bottomLeft, bottomRigth);
+    modifyBorderRadius(topLeft, topRight, bottomLeft, bottomRight);
 }
 
 function copyStyle(){
-    copyCSS(topLeft, topRigth, bottomLeft, bottomRigth)
+    copyCSS(topLeft, topRight, bottomLeft, bottomRight)
 }
 
-let topLeft, topRigth, bottomLeft, bottomRigth
+let topLeft, topRight, bottomLeft, bottomRight
