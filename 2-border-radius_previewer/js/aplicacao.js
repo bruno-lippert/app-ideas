@@ -1,61 +1,45 @@
-class BorderRadius {
-    constructor(topLeft, topRigth, bottomLeft, bottomRigth) {
-        this.topLeft = topLeft;
-        this.topRigth = topRigth;
-        this.bottomLeft = bottomLeft;
-        this.bottomRigth = bottomRigth;
-    }
-}
-
 function getInformations() {
-    let topLeft = document.getElementById("top-left").value;
-    let topRigth = document.getElementById("top-rigth").value;
-    let bottomLeft = document.getElementById("bottom-left").value;
-    let bottomRigth = document.getElementById("bottom-rigth").value;
-    let application = new BorderRadius(topLeft, topRigth, bottomLeft, bottomRigth);
-    // this.modifyBorderRadius(application)
-    console.log(application)
-    return application
-
+    topLeft = document.getElementById("top-left").value;
+    topRigth = document.getElementById("top-rigth").value;
+    bottomLeft = document.getElementById("bottom-left").value;
+    bottomRigth = document.getElementById("bottom-rigth").value;
+    console.log(topLeft, topRigth, bottomLeft, bottomRigth);
 }
 
-function modifyBorderRadius() {
+function modifyBorderRadius(topLeft, topRigth, bottomLeft, bottomRigth) {
     if (
-        application.topLeft == "" ||
-        application.topRigth == "" ||
-        application.bottomLeft == "" ||
-        application.bottomRigth == ""
+        topLeft == "" ||
+        topRigth == "" ||
+        bottomLeft == "" ||
+        bottomRigth == ""
     ) {
         alert("Preencha todos os campos!");
     }
 
-    document.getElementById("modifiableBox").style.borderRadius = `${application.topLeft}% ${application.topRigth}% ${application.bottomLeft}% ${application.bottomRigth}%`;
+    document.getElementById("modifiableBox").style.borderRadius = `${topLeft}% ${topRigth}% ${bottomLeft}% ${bottomRigth}%`;
 
-    console.log(application.topLeft);
-    console.log(application.topRigth);
-    console.log(application.bottomLeft);
-    console.log(application.bottomRigth);
+    let borderTopLeft = document.createTextNode(`border-top-left-radius:${topLeft};`);
+    let borderTopRigth = document.createTextNode(`border-top-right-radius:${topRigth};`)
+    let borderBottomLeft = document.createTextNode(`border-bottom-left-radius:${bottomLeft};`)
+    let borderBottomRigth = document.createTextNode(`border-bottom-right-radius:${bottomRigth};`)
+    let copiedText = document.getElementById("border-radius-properties")
 }
-
-// copyCSS(){
-//     this.addPropertiesBorderRadiusHTML(application)
-// }
 
 function copyCSS() {
-    let text = `border-top-left-radius:${this.topLeft};
-                border-top-right-radius:${this.topRigth};
-                border-bottom-left-radius:${this.bottomLeft};
-                border-bottom-right-radius:${this.bottomRigth};`;
-    console.log(text);
-    return text
-
-    // let element = document.getElementById("styleBorderRadius")
-    // element.innerText(text)
+    
+    console.log(copiedText);
+    // copiedText.select();
+    // document.execCommand("copy")
+    return copiedText
 }
 
-let application = new BorderRadius()
-
-function x() {
-    getInformations()
-    modifyBorderRadius()
+function modifyBox() {
+    getInformations();
+    modifyBorderRadius(topLeft, topRigth, bottomLeft, bottomRigth);
 }
+
+function copyStyle(){
+    copyCSS(topLeft, topRigth, bottomLeft, bottomRigth)
+}
+
+let topLeft, topRigth, bottomLeft, bottomRigth

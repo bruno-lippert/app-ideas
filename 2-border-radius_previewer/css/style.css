@@ -38,4 +38,10 @@ body {
   background-color: green;
 }
 
+.copytext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*# sourceMappingURL=style.css.map */
