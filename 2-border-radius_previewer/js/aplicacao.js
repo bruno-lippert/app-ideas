@@ -36,7 +36,7 @@ function copyCSS() {
     let topRigth = document.getElementById("topRigth").innerHTML
     let bottomLeft = document.getElementById("bottomLeft").innerHTML
     let bottomRigth = document.getElementById("bottomRigth").innerHTML
-    let text = topLeft + topRigth +  bottomLeft + bottomRigth
+    let text = topLeft +"\n"+ topRigth +"\n"+ bottomLeft +"\n"+ bottomRigth
     
     navigator.clipboard.writeText(text)
     .then(() => {
