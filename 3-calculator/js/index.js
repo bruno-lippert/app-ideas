@@ -1,5 +1,6 @@
 // let calculator = new Calculator()
 function calculator(x) {
+    //adiciona o conteúdo no HTML
     let calculation = document.getElementById("calculation")
     let contentCalculation = document.createTextNode(x)
     calculation.appendChild(contentCalculation)
@@ -30,15 +31,36 @@ function result() {
         }
     }
 
-    //remove o calculo da class calculation
-    let removeCalc = document.querySelector("p[id='calculation'")
-    var parent = removeCalc.parentNode
-    parent.removeChild(removeCalc)
+    removeCalc()
 
+    createElementP(calculation)
+}
+
+function deletLastChar() {
+    const currentCalc = document.querySelector("p[id='calculation']").innerHTML
+    removeCalc()
+    let currentCalcArray = currentCalc.split("")
+    let calculation = ""
+    
+    for (let i = 0; i < currentCalcArray.length-1; i++) {
+        calculation += currentCalcArray[i]
+    }
+
+    createElementP(calculation)
+}
+
+function createElementP(calculation) {
     //adiciona o elemento com o valor calculado na class calculation
     let newElementP = document.createElement("p")
     newElementP.setAttribute("id","calculation")
     let resultContent = document.createTextNode(calculation)
     newElementP.appendChild(resultContent)
     document.querySelector("div[class='calculation'").appendChild(newElementP)
+}
+
+function removeCalc() {
+    //remove o calculo da class calculation
+    let removeCalc = document.querySelector("p[id='calculation'")
+    var parent = removeCalc.parentNode
+    parent.removeChild(removeCalc)
 }
