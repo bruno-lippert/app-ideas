@@ -30,12 +30,15 @@ function result() {
         }
     }
 
-    console.log(calculation)
-    console.log(numbersArray)
+    //remove o calculo da class calculation
+    let removeCalc = document.querySelector("p[id='calculation'")
+    var parent = removeCalc.parentNode
+    parent.removeChild(removeCalc)
 
-    // let numbers = calculation.split("+")
-    // let operations = calculation.split(" + ")
-    // operations = operations.parse
-    // console.log(numbers)
-    // console.log(operations)
+    //adiciona o elemento com o valor calculado na class calculation
+    let newElementP = document.createElement("p")
+    newElementP.setAttribute("id","calculation")
+    let resultContent = document.createTextNode(calculation)
+    newElementP.appendChild(resultContent)
+    document.querySelector("div[class='calculation'").appendChild(newElementP)
 }
