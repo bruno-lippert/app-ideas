@@ -25,9 +25,7 @@ function createElementP(calculation) {
 }
 
 function result() {
-    let calculationString = document.querySelector(
-        "p[id='calculation']"
-    ).innerHTML;
+    let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
 
     let numbersArray = [];
