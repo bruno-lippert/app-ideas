@@ -29,7 +29,8 @@ main {
     "clearAll clear division multiplication"
     "num7 num8 num9 subtraction"
     "num4 num5 num6 addition"
-    "num1 num2 num3 result";
+    "num1 num2 num3 result"
+    "num0 num0 comma result";
     gap: 15px;
     padding: 50px 5px;
     background-color: gray;
@@ -47,6 +48,10 @@ main {
     background-color: lightgray;
 }
 
+#num0{
+    grid-area: num0;
+    display: flex;
+}
 #num1{
     grid-area: num1;
 }
@@ -74,6 +79,9 @@ main {
 #num9{
     grid-area: num9;
 }
+#comma {
+    grid-area: comma;
+}
 #addition{
     grid-area: addition;
 }
@@ -88,6 +96,7 @@ main {
 }
 #result{
     grid-area: result;
+    display: flex;
 }
 #clearLast{
     grid-area: clear;
@@ -102,8 +111,9 @@ main {
 }
 
 .buttons {
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
     border-radius: 50px;
     font-size: 1.5em;
+    flex-grow: 1;
 }
