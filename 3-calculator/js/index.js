@@ -27,13 +27,21 @@ function createElementP(calculation) {
 function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
-
+    
+    if (calculationArray[1] == "+" || calculationArray[1] == "-" || calculationArray[1] == "*" || calculationArray[1] == "/") {
+        calculationArray.splice(0, 2)
+        
+    }
+    console.log(calculationArray)
     let numbersArray = [];
 
     //converte o array de string em number
     for (let i = 0; i < calculationArray.length; i++) {
         numbersArray.push(parseFloat(calculationArray[i]));
     }
+
+
+
     //faz o calculo dos valores
     let calculation = numbersArray[0];
     for (let i = 0; i < calculationArray.length; i++) {
@@ -56,9 +64,9 @@ function deletLastChar() {
     const currentCalc = document.querySelector("p[id='calculation']").innerHTML;
     let currentCalcArray = currentCalc.split("");
     let calculation = "";
-    
+
     for (let i = 0; i < currentCalcArray.length - 1; i++) {
-        calculation += currentCalcArray[i]; 
+        calculation += currentCalcArray[i];
     }
     removeCalc(calculation)
 }
