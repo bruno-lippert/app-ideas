@@ -32,7 +32,7 @@ function result() {
         calculationArray.splice(0, 2)
         
     }
-    console.log(calculationArray)
+    
     let numbersArray = [];
 
     //converte o array de string em number
