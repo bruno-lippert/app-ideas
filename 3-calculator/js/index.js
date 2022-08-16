@@ -28,11 +28,11 @@ function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
     
-    if (calculationArray[1] == "+" || calculationArray[1] == "-" || calculationArray[1] == "*" || calculationArray[1] == "/") {
+    if (calculationArray[0] == "" && calculationArray[1] == "+" ||  calculationArray[1] == "-" ||  calculationArray[1] == "*" ||  calculationArray[1] == "/"  ) {
         calculationArray.splice(0, 2)
         
     }
-    
+    console.log(calculationArray)
     let numbersArray = [];
 
     //converte o array de string em number
