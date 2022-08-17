@@ -28,6 +28,7 @@ function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
 
+    //verifica se o primeiro caractere não é um operador
     if (calculationArray[0] == "" && calculationArray[1] == "+" ||
         calculationArray[0] == "" && calculationArray[1] == "-" || 
         calculationArray[0] == "" && calculationArray[1] == "*" || 
@@ -35,13 +36,22 @@ function result() {
         calculationArray.splice(0, 2)
     }
     let numbersArray = [];
-
+    
+    //corrigi caso valores de operadores estejam repetidos
+    // for (let i = 0; i < calculationArray.length; i++) {
+    //     let index = calculationArray.indexOf(i)
+    //     if (calculationArray[i] == calculationArray[i + 1]) {
+    //         calculationArray.splice(index, 1)
+    //         console.log("aaa")
+    //     }
+    // }
+    
     //converte o array de string em number
     for (let i = 0; i < calculationArray.length; i++) {
         numbersArray.push(parseFloat(calculationArray[i]));
     }
 
-
+    
 
     //faz o calculo dos valores
     let calculation = numbersArray[0];
