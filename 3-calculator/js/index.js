@@ -92,3 +92,5 @@ function removeCalc(calculation) {
 
     createElementP(calculation);
 }
+
+alert("Projeto em desenvolvimento")
