@@ -2,10 +2,8 @@
 function calculator(x) {
     //adiciona o conteúdo no HTML
     let calculation = document.getElementById("calculation");
-    console.log(calculation)
     let contentCalculation = document.createTextNode(x);
     calculation.appendChild(contentCalculation);
-    showResult()
     return x;
 }
 
@@ -29,7 +27,6 @@ function createElementP(calculation) {
 function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
-    console.log(calculationArray)
     //verifica se o primeiro caractere não é um operador
     if (calculationArray[0] == "" && calculationArray[1] == "+" ||
         calculationArray[0] == "" && calculationArray[1] == "*" ||
@@ -96,17 +93,5 @@ function removeCalc(calculation) {
     createElementP(calculation);
 }
 
-function showResult() {
-    let calculationString = document.querySelector("p[id='calculation']").innerHTML;
-    let calculationArray = calculationString.split(" ");
-
-    for (let i = 0; i < calculationArray.length; i++){
-        if (calculationString.length >= 5) {
-            console.log(calculationArray)
-            result()
-    }       
-    }
-
-}
 
 //alert("Projeto em desenvolvimento")
