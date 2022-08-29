@@ -94,4 +94,4 @@ function removeCalc(calculation) {
 }
 
 
-//alert("Projeto em desenvolvimento")
+alert("Projeto em desenvolvimento")
