@@ -4,6 +4,20 @@ function calculator(x) {
     let calculation = document.getElementById("calculation");
     let contentCalculation = document.createTextNode(x);
     calculation.appendChild(contentCalculation);
+
+    let calculationString = document.querySelector("p[id='calculation']").innerHTML;
+    let calculationArray = calculationString.split(" ");
+    
+    if (x == " + " && calculationArray.length >= 4 ||
+        x == " - " && calculationArray.length >= 4 ||
+        x == " * " && calculationArray.length >= 4 ||
+        x == " / " && calculationArray.length >= 4) {
+        result()
+
+        let calculation = document.getElementById("calculation");
+        let contentCalculation = document.createTextNode(x);
+        calculation.appendChild(contentCalculation);
+    }
     return x;
 }
 
@@ -27,6 +41,9 @@ function createElementP(calculation) {
 function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
+    let a = calculationArray.splice(3, 2)
+    console.log(calculationArray)
+
     //verifica se o primeiro caractere não é um operador
     if (calculationArray[0] == "" && calculationArray[1] == "+" ||
         calculationArray[0] == "" && calculationArray[1] == "*" ||
@@ -35,22 +52,10 @@ function result() {
     }
     let numbersArray = [];
 
-    //corrigi caso valores de operadores estejam repetidos
-    // for (let i = 0; i < calculationArray.length; i++) {
-    //     let index = calculationArray.indexOf(i)
-    //     if (calculationArray[i - 1] == "" && calculationArray[i + 1] == "") {
-    //         calculationArray.splice(index)
-            
-    //         alert("aaa")
-    //     }
-    // }
-
     //converte o array de string em number
     for (let i = 0; i < calculationArray.length; i++) {
         numbersArray.push(parseFloat(calculationArray[i]));
     }
-
-
 
     //faz o calculo dos valores
     let calculation = numbersArray[0];
@@ -66,6 +71,12 @@ function result() {
         }
     }
 
+    if (a == "+ " && calculationArray.length >= 4 ||
+        a == " - " && calculationArray.length >= 4 ||
+        a == " * " && calculationArray.length >= 4 ||
+        a == " / " && calculationArray.length >= 4) {
+        calculationArray.push(" + ")
+    }
     removeCalc(calculation);
 }
 
@@ -92,6 +103,3 @@ function removeCalc(calculation) {
 
     createElementP(calculation);
 }
-
-
-alert("Projeto em desenvolvimento")
