@@ -88,6 +88,7 @@ function result() {
     removeCalc(calculation);
 }
 
+
 function deletLastChar() {
     //deleta o último caractere
     const currentCalc = document.querySelector("p[id='calculation']").innerHTML;
