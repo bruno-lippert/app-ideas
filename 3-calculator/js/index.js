@@ -3,24 +3,30 @@ function calculator(x) {
 
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
+
     
-    if (calculationArray[1] == "-" && calculationArray.length >= 6) {
-        calculationArray.splice(0, 1)
-        console.log(calculationArray)
+    if (calculationArray[1] == "-" && calculationArray.length >= 7) {
         result()
 
         addElementsHTML(x)
     }
-    //faz com que traga o resultado a partir de dois números inseridos mais o operador caso mais um operador seja inserido na conta
-    else if (x == " + " && calculationArray.length == 5 ||
-        x == " - " && calculationArray.length == 5 ||
-        x == " * " && calculationArray.length == 5 ||
-        x == " / " && calculationArray.length == 5) {
-        result()
-
-        addElementsHTML(x)
-    }
+   
+    showResult(x)
     return x;
+}
+
+ //faz com que traga o resultado a partir de dois números inseridos mais o operador caso mais um operador seja inserido na conta
+function showResult(x) {
+    let calculationString = document.querySelector("p[id='calculation']").innerHTML;
+    let calculationArray = calculationString.split(" ");
+
+    if (x == " + " && calculationArray.length == 5 && calculationArray[1] != "-" ||
+        x == " - " && calculationArray.length == 5 && calculationArray[1] != "-" ||
+        x == " * " && calculationArray.length == 5 && calculationArray[1] != "-" ||
+        x == " / " && calculationArray.length == 5 && calculationArray[1] != "-") {
+        result()
+        addElementsHTML(x)
+    }
 }
 
 //adiciona o conteúdo no HTML
@@ -50,6 +56,17 @@ function createElementP(calculation) {
 function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
+    console.log(calculationArray)
+    
+    if (calculationArray[1] == "-" && calculationArray.length >= 7) {
+        calculationArray.shift()
+        calculationArray.pop()
+        let removedElements = calculationArray.splice(0, 2)
+        let addElementsTogether = removedElements.join("")
+        calculationArray.unshift(addElementsTogether)
+        console.log(calculationArray)
+    }
+    
     let a = calculationArray.splice(3, 2)
     
 
@@ -60,12 +77,9 @@ function result() {
         calculationArray.splice(0, 2)
     }
 
-    // if (calculationArray[1] == "-") {
-        
-    // }
+    
 
     let numbersArray = [];
-
     //converte o array de string em number
     for (let i = 0; i < calculationArray.length; i++) {
         numbersArray.push(parseFloat(calculationArray[i]));
@@ -87,7 +101,6 @@ function result() {
 
     removeCalc(calculation);
 }
-
 
 function deletLastChar() {
     //deleta o último caractere
