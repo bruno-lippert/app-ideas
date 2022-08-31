@@ -4,8 +4,15 @@ function calculator(x) {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
     
+    if (calculationArray[1] == "-" && calculationArray.length >= 6) {
+        calculationArray.splice(0, 1)
+        console.log(calculationArray)
+        result()
+
+        addElementsHTML(x)
+    }
     //faz com que traga o resultado a partir de dois números inseridos mais o operador caso mais um operador seja inserido na conta
-    if (x == " + " && calculationArray.length == 5 ||
+    else if (x == " + " && calculationArray.length == 5 ||
         x == " - " && calculationArray.length == 5 ||
         x == " * " && calculationArray.length == 5 ||
         x == " / " && calculationArray.length == 5) {
@@ -44,14 +51,19 @@ function result() {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
     let a = calculationArray.splice(3, 2)
-    console.log(calculationArray)
+    
 
-    //verifica se o primeiro caractere não é um operador
+    //verifica se o primeiro caractere é um operador e remove ele
     if (calculationArray[0] == "" && calculationArray[1] == "+" ||
         calculationArray[0] == "" && calculationArray[1] == "*" ||
         calculationArray[0] == "" && calculationArray[1] == "/") {
         calculationArray.splice(0, 2)
     }
+
+    // if (calculationArray[1] == "-") {
+        
+    // }
+
     let numbersArray = [];
 
     //converte o array de string em number
@@ -73,12 +85,6 @@ function result() {
         }
     }
 
-    if (a == "+ " && calculationArray.length >= 4 ||
-        a == " - " && calculationArray.length >= 4 ||
-        a == " * " && calculationArray.length >= 4 ||
-        a == " / " && calculationArray.length >= 4) {
-        calculationArray.push(" + ")
-    }
     removeCalc(calculation);
 }
 
