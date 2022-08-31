@@ -1,24 +1,26 @@
-// let calculator = new Calculator()
 function calculator(x) {
-    //adiciona o conteúdo no HTML
-    let calculation = document.getElementById("calculation");
-    let contentCalculation = document.createTextNode(x);
-    calculation.appendChild(contentCalculation);
+    addElementsHTML(x)
 
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
     
-    if (x == " + " && calculationArray.length >= 4 ||
-        x == " - " && calculationArray.length >= 4 ||
-        x == " * " && calculationArray.length >= 4 ||
-        x == " / " && calculationArray.length >= 4) {
+    //faz com que traga o resultado a partir de dois números inseridos mais o operador caso mais um operador seja inserido na conta
+    if (x == " + " && calculationArray.length == 5 ||
+        x == " - " && calculationArray.length == 5 ||
+        x == " * " && calculationArray.length == 5 ||
+        x == " / " && calculationArray.length == 5) {
         result()
 
-        let calculation = document.getElementById("calculation");
-        let contentCalculation = document.createTextNode(x);
-        calculation.appendChild(contentCalculation);
+        addElementsHTML(x)
     }
     return x;
+}
+
+//adiciona o conteúdo no HTML
+function addElementsHTML(x){
+    let calculation = document.getElementById("calculation");
+    let contentCalculation = document.createTextNode(x);
+    calculation.appendChild(contentCalculation);
 }
 
 function createElementP(calculation) {
@@ -80,7 +82,6 @@ function result() {
     removeCalc(calculation);
 }
 
-
 function deletLastChar() {
     //deleta o último caractere
     const currentCalc = document.querySelector("p[id='calculation']").innerHTML;
@@ -92,8 +93,6 @@ function deletLastChar() {
     }
     removeCalc(calculation)
 }
-
-
 
 function removeCalc(calculation) {
     //remove o calculo da class calculation
