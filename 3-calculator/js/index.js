@@ -5,7 +5,7 @@ function calculator(x) {
     let calculationArray = calculationString.split(" ");
 
     
-    if (calculationArray[1] == "-" && calculationArray.length >= 7) {
+    if (calculationArray[1] == "-" && calculationArray.length == 7) {
         result()
 
         addElementsHTML(x)
@@ -20,10 +20,10 @@ function showResult(x) {
     let calculationString = document.querySelector("p[id='calculation']").innerHTML;
     let calculationArray = calculationString.split(" ");
 
-    if (x == " + " && calculationArray.length == 5 && calculationArray[1] != "-" ||
-        x == " - " && calculationArray.length == 5 && calculationArray[1] != "-" ||
-        x == " * " && calculationArray.length == 5 && calculationArray[1] != "-" ||
-        x == " / " && calculationArray.length == 5 && calculationArray[1] != "-") {
+    if (x == " + " && calculationArray.length >= 5 && calculationArray[1] != "-" ||
+        x == " - " && calculationArray.length >= 5 && calculationArray[1] != "-" ||
+        x == " * " && calculationArray.length >= 5 && calculationArray[1] != "-" ||
+        x == " / " && calculationArray.length >= 5 && calculationArray[1] != "-") {
         result()
         addElementsHTML(x)
     }
