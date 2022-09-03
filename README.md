@@ -8,3 +8,6 @@ Projeto 2 - é um modificador da propriedade border-radius onde o usiário pode 
 
 Projeto 3 - desenvolvimento de uma calculadora
 <a href="https://bruno-lippert.github.io/app-ideas/3-calculator/html/index.html">Ir para a página</a>
+
+Projeto 4 - lista de compras
+<a href="https://bruno-lippert.github.io/app-ideas/4-shopping-list/html/index.html">Ir para a página</a>
