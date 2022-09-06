@@ -21,7 +21,8 @@ main {
     min-height: 90vh;
     margin: 50px 80px 50px 80px;
     border-radius: 10px;
-    padding-bottom: 30px;
+    padding: 0 30px 30px 30px;
+    padding-right: 30px;
 }
 
 .title {
@@ -44,4 +45,32 @@ main {
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 300px;
+    }
+    
+    .container-items {
+        margin-top: 30px;
+        width: 220px;
+    }
+    #addItems {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    #buttomAdd {
+        height: 30px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 310px) {
+    main {
+        width: 250px;
+    }
 }
