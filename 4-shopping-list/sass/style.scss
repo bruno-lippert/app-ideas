@@ -38,13 +38,24 @@ main {
     width: 500px;
 }
 
-.items {
+.newDiv {
     padding: 7px;
     border-radius: 10px;
     background-color: lightblue;
     margin-top: 5px;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
+}
+
+.items {
+    font-size: 1em;
+    overflow: auto;
+    margin-right: 5px;
+}
+
+.checkBoxes {
+    margin-right: 5px;
 }
 
 @media (max-width: 600px) {

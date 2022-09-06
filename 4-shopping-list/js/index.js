@@ -3,20 +3,30 @@ function addItem() {
 
     if (item == "") {
         alert("Digite um item para adiciona-lo na lista!")
-    } else {
-        //cira um paragrafo e adiciona o texto dentro dele
+     } 
+    //else if(item.length > 12){
+    // } 
+    else {
+        //cira um paragrafo
         const newItemElement = document.createElement("p")
         const newItem = document.createTextNode(item)
         newItemElement.setAttribute("class", "items")
-        newItemElement.appendChild(newItem)
+        
 
         //cria um checkbox
         const checkBox = document.createElement("input")
         checkBox.setAttribute("type", "checkbox")
+        checkBox.setAttribute("class", "checkBoxes")
+
+        const span = document.createElement("span")
+        span.setAttribute("class", "checkmark")
+        
+        newItemElement.appendChild(checkBox)
+        newItemElement.appendChild(newItem)
 
         //coloca o checkbox e o item dentro da class container
         const container = document.getElementById("listOfItems")
-        newItemElement.appendChild(checkBox)
+        
         const newDiv = document.createElement("div")
         newDiv.setAttribute("class", "newDiv")
         container.appendChild(newDiv)
