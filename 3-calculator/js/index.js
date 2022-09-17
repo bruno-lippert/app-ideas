@@ -108,6 +108,7 @@ function deletLastChar() {
     let currentCalcArray = currentCalc.split("");
     let calculation = "";
 
+    //aiciona a conta de volta sem o ultimo caractere
     for (let i = 0; i < currentCalcArray.length - 1; i++) {
         calculation += currentCalcArray[i];
     }
