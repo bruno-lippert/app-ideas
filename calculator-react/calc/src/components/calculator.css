@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content-container {
+    width: 300px;
+    height: 400px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    grid-template-areas: 
+    'display display display display'
+    'ac changSign percentage division'
+    'num7 num8 num9 multiplication'
+    'num4 num5 num6 subtraction'
+    'num1 num2 num3 sum'
+    'num0 num0 comma result';
+    background-color: black;
+    padding-bottom: 15px;
+    border-radius: 25px;
+}
+.zero {
+    grid-area: num0;
+    display: flex;
+}
+.one {
+    grid-area: num1;
+}
+.two {
+    grid-area: num2;
+}
+.three {
+    grid-area: num3;
+}
+.four {
+    grid-area: num4;
+}
+.five {
+    grid-area: num5;
+}
+.six {
+    grid-area: num6;
+}
+.seven {
+    grid-area: num7;
+}
+.eight {
+    grid-area: num8;
+}
+.nine {
+    grid-area: num9;
+}
+.clear {
+    grid-area:ac;
+}
+.changeSign {
+    grid-area: changSign;
+}
+.percentage {
+    grid-area: percentage;
+}
+.division {
+    grid-area: division;
+}
+.multiplication {
+    grid-area: multiplication;
+}
+.subtraction {
+    grid-area: subtraction;
+}
+.add {
+    grid-area: sum;
+}
+.result {
+    grid-area: result;
+}
+.comma {
+    grid-area: comma;
+}
+
+button {
+    min-width: 4em;
+    height: 4em;
+    border: none;
+    border-radius: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.display {
+    text-align: end;
+    grid-area: display;
+    color: white;
+}
