@@ -13,8 +13,8 @@
 }
 
 .content-container {
-    width: 300px;
-    height: 400px;
+    width: 450px;
+    height: 600px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -89,11 +89,21 @@
     grid-area: comma;
 }
 
+h1 {
+    font-size: 3em;
+}
+
 button {
-    min-width: 4em;
-    height: 4em;
+    min-width: 3em;
+    height: 3em;
     border: none;
     border-radius: 50px;
+    font-size: 1.5em;
+    margin: 0.3em;
+}
+
+p {
+    font-size: 1.7em;
 }
 
 button:hover {
@@ -104,4 +114,16 @@ button:hover {
     text-align: end;
     grid-area: display;
     color: white;
+}
+
+.btnOrange {
+    background-color: #FF9500;
+    color: white;
+}
+.btnDarkGray {
+    background-color: #505050;
+    color: white;
+}
+.btnLightGray {
+    background-color: #D4D4D4;
 }
